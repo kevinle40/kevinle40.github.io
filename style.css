@@ -1,5 +1,5 @@
 :root {
-  --paper: #FFFFFF;
+  --paper: #F5F5F7;
   --ink: #1D1D1F;
   --graphite: #6E6E73;
   --steel: #0071E3;
@@ -89,7 +89,8 @@ nav a:hover { color: var(--steel); }
 .intro-photo {
   flex: 0 0 220px;
   width: 220px;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
   overflow: hidden;
   border: 1px solid var(--line);
 }
@@ -114,7 +115,7 @@ nav a:hover { color: var(--steel); }
 
 .about h2,
 .projects > h2 {
-  font-size: 1.2rem;
+  font-size: 1.75rem;
   font-weight: 500;
   margin: 32px 0 12px;
 }
