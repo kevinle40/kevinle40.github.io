@@ -118,15 +118,17 @@ nav a:hover { color: var(--steel-light); }
 /* ---------- section headings (About + Projects titles) ---------- */
 
 .section-title {
+  display: inline-block;
+  background: var(--banner);
   font-size: 1.75rem;
   font-weight: 500;
-  margin: 0 0 12px;
+  padding: 8px 20px;
+  margin: 0 0 20px;
 }
 
 /* ---------- about ---------- */
 
 .about {
-  background: var(--banner);
   padding: 56px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -136,7 +138,6 @@ nav a:hover { color: var(--steel-light); }
 /* ---------- projects ---------- */
 
 .projects {
-  background: var(--banner);
   padding: 56px 0 32px;
 }
 
