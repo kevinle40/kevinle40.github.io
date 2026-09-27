@@ -124,6 +124,7 @@ nav a:hover { color: var(--steel-light); }
   font-size: 1.75rem;
   font-weight: 500;
   padding: 8px 20px;
+  border-radius: 8px;
   margin: 0 0 20px;
 }
 
