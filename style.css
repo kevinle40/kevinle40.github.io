@@ -4,6 +4,10 @@
   --graphite: #6E6E73;
   --steel: #0071E3;
   --line: #D2D2D7;
+  --banner: #EEF3F8;
+  --header-bg: #1D1D1F;
+  --header-text: #F5F5F7;
+  --steel-light: #2997FF;
   --measure: 680px;
 }
 
@@ -37,9 +41,20 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--steel); outline
 /* ---------- header ---------- */
 
 .site-header {
-  border-bottom: 1px solid var(--line);
+  background: var(--header-bg);
   padding: 20px 0;
 }
+
+.mark { margin: 0; font-weight: 600; font-size: 1.05rem; color: var(--header-text); }
+
+nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--header-text);
+  font-size: 0.95rem;
+}
+nav a:first-child { margin-left: 0; }
+nav a:hover { color: var(--steel-light); }
 
 .site-header .wrap {
   display: flex;
@@ -48,17 +63,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--steel); outline
   flex-wrap: wrap;
   gap: 12px;
 }
-
-.mark { margin: 0; font-weight: 600; font-size: 1.05rem; }
-
-nav a {
-  margin-left: 24px;
-  text-decoration: none;
-  color: var(--ink);
-  font-size: 0.95rem;
-}
-nav a:first-child { margin-left: 0; }
-nav a:hover { color: var(--steel); }
 
 /* ---------- intro ---------- */
 
@@ -113,28 +117,27 @@ nav a:hover { color: var(--steel); }
 
 /* ---------- section headings (About + Projects titles) ---------- */
 
-.about h2,
-.projects > h2 {
+.section-title {
   font-size: 1.75rem;
   font-weight: 500;
-  margin: 32px 0 12px;
+  margin: 0 0 12px;
 }
 
 /* ---------- about ---------- */
 
 .about {
-  padding: 24px 24px 40px;
+  background: var(--banner);
+  padding: 56px 0;
   border-top: 1px solid var(--line);
-  margin-top: 24px;
+  border-bottom: 1px solid var(--line);
 }
 .about p { max-width: 62ch; color: var(--graphite); }
 
 /* ---------- projects ---------- */
 
 .projects {
-  padding: 24px 24px 8px;
-  border-top: 1px solid var(--line);
-  margin-top: 24px;
+  background: var(--banner);
+  padding: 56px 0 32px;
 }
 
 .project {
