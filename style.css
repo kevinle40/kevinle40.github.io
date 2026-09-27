@@ -73,14 +73,36 @@ nav a:hover { color: var(--steel); }
 }
 
 .lede {
-  max-width: 58ch;
+  max-width: 100ch;
   color: var(--graphite);
   font-size: 1.05rem;
 }
 
+/* ---------- section headings (About + Projects titles) ---------- */
+
+.about h2,
+.projects > h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 32px 0 12px;
+}
+
+/* ---------- about ---------- */
+
+.about {
+  padding: 24px 24px 40px;
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+}
+.about p { max-width: 62ch; color: var(--graphite); }
+
 /* ---------- projects ---------- */
 
-.projects { padding: 24px 24px 8px; }
+.projects {
+  padding: 24px 24px 8px;
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+}
 
 .project {
   position: relative;
@@ -161,12 +183,6 @@ nav a:hover { color: var(--steel); }
   padding-bottom: 1px;
 }
 .project-link:hover { opacity: 0.75; }
-
-/* ---------- about ---------- */
-
-.about { padding: 24px 24px 72px; border-top: 1px solid var(--line); margin-top: 24px; }
-.about h2 { font-size: 1.2rem; font-weight: 500; margin: 32px 0 12px; }
-.about p { max-width: 62ch; color: var(--graphite); }
 
 /* ---------- footer ---------- */
 
