@@ -139,59 +139,101 @@ nav a:hover { color: var(--steel-light); }
 
 /* ---------- projects ---------- */
 
-.projects {
-  padding: 56px 0 32px;
+.projects { padding: 56px 0 48px; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 28px;
+  margin-top: 8px;
 }
 
-.project {
-  position: relative;
-  padding: 40px 0;
-  border-top: 1px solid var(--line);
-}
-.project:first-child { border-top: none; }
-
-/* registration-mark corner ticks, echoing drawing-sheet crop marks */
-.project::before,
-.project::after {
-  content: "";
-  position: absolute;
-  top: 40px;
-  width: 9px;
-  height: 9px;
-  border-top: 1px solid var(--steel);
-}
-.project::before { left: -24px; border-left: 1px solid var(--steel); }
-.project::after   { right: -24px; border-right: 1px solid var(--steel); }
-
-.project-media {
+.card-trigger {
+  display: block;
   width: 100%;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-trigger:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0, 0, 0, .10); }
+
+.card-media { display: block; aspect-ratio: 16 / 10; background: var(--line); }
+.card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.card-title {
+  display: block;
+  padding: 16px 18px 4px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.card-cta {
+  display: block;
+  padding: 0 18px 18px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.9rem;
+  color: var(--steel);
+}
+
+/* ---------- project detail dialog ---------- */
+
+.project-dialog {
+  width: min(860px, calc(100% - 32px));
+  max-height: calc(100vh - 48px);
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #FFFFFF;
+  color: var(--ink);
+}
+.project-dialog[open] { animation: dialog-in .22s ease; }
+.project-dialog::backdrop { background: rgba(0, 0, 0, .5); backdrop-filter: blur(6px); }
+@keyframes dialog-in {
+  from { opacity: 0; transform: scale(.96) translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+body:has(.project-dialog[open]) { overflow: hidden; }
+
+.dialog-content { max-height: calc(100vh - 48px); overflow-y: auto; padding: 32px; }
+.dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(29, 29, 31, .75);
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.dialog-close:hover { background: var(--ink); }
+
+.detail-media {
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 8px;
   background: var(--line);
   margin-bottom: 24px;
 }
-.project-media img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.detail-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.sheet-no {
-  font-family: "Space Grotesk", sans-serif;
-  color: var(--steel);
-  font-size: 0.85rem;
-  margin: 0 0 8px;
-}
+.dialog-content h2 { font-size: 1.6rem; font-weight: 500; line-height: 1.3; margin: 0 0 16px; }
+.dialog-content p { max-width: 62ch; }
 
-.project h2 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 1.35;
-  margin: 0 0 16px;
-  max-width: 32ch;
-}
-
-.project p { max-width: 62ch; }
+.sheet-no { font-family: "Space Grotesk", sans-serif; color: var(--steel); font-size: 0.85rem; margin: 0 0 8px; }
 
 .spec-row {
   display: flex;
@@ -202,17 +244,9 @@ nav a:hover { color: var(--steel-light); }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-
 .spec-row > div { display: flex; flex-direction: column; gap: 2px; }
-
-.label {
-  font-size: 0.78rem;
-  color: var(--graphite);
-}
-.value {
-  font-family: "Source Serif 4", serif;
-  font-size: 0.92rem;
-}
+.label { font-size: 0.78rem; color: var(--graphite); }
+.value { font-family: "Source Serif 4", serif; font-size: 0.92rem; }
 
 .project-link {
   font-family: "Space Grotesk", sans-serif;
@@ -252,9 +286,32 @@ nav a:hover { color: var(--steel-light); }
   body { font-size: 16.5px; }
   .intro { padding: 44px 24px 32px; }
   .intro h1 { font-size: 1.6rem; }
-  .project::before, .project::after { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+/* ---------- résumé page ---------- */
+
+.mark a { color: inherit; text-decoration: none; }
+.resume { padding: 56px 0 72px; }
+.resume-frame {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 600px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #FFFFFF;
+}
+.resume-note { margin: 16px 0 0; color: var(--graphite); font-size: 0.95rem; }
+
+@media (max-width: 600px) {
+  .dialog-content { padding: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-dialog[open] { animation: none; }
+  .card-trigger { transition: none; }
 }
