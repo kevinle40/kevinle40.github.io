@@ -169,18 +169,18 @@ nav a:hover { color: var(--steel-light); }
 
 .card-title {
   display: block;
-  padding: 16px 18px 4px;
+  padding: 18px 18px 14px;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.35;
 }
-.card-cta {
+.card-desc {
   display: block;
-  padding: 0 18px 18px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.9rem;
-  color: var(--steel);
+  padding: 14px 18px 20px;
+  color: var(--graphite);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* ---------- project detail dialog ---------- */
