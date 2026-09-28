@@ -315,3 +315,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   .project-dialog[open] { animation: none; }
   .card-trigger { transition: none; }
 }
+
+/* company-logo cards: show the whole logo instead of cropping it */
+.card-media.logo { background: #FFFFFF; }
+.card-media.logo img { object-fit: contain; padding: 28px; }
