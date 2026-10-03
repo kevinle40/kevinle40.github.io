@@ -17,3 +17,16 @@ dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.clo
 dialog.addEventListener('click', (e) => {
   if (e.target === dialog) dialog.close();
 });
+
+// Dark mode toggle. The <head> inline script already set the initial
+// data-theme attribute before paint (using a saved choice or the OS
+// preference); this just handles switching it and remembering the choice.
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const root = document.documentElement;
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}

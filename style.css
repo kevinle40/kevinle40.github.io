@@ -8,8 +8,21 @@
   --header-bg: #1D1D1F;
   --header-text: #F5F5F7;
   --steel-light: #2997FF;
+  --surface: #FFFFFF;
   --measure: 680px;
 }
+
+:root[data-theme="dark"] {
+  --paper: #000000;
+  --ink: #F5F5F7;
+  --graphite: #A1A1A6;
+  --line: #3A3A3C;
+  --banner: #1C1C1E;
+  --surface: #1C1C1E;
+  --steel: #2997FF;
+}
+
+html { background: var(--paper); }
 
 * { box-sizing: border-box; }
 
@@ -174,7 +187,7 @@ nav a:hover { color: var(--steel-light); }
   font: inherit;
   color: inherit;
   cursor: pointer;
-  background: #FFFFFF;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
@@ -210,7 +223,7 @@ nav a:hover { color: var(--steel-light); }
   border: 0;
   border-radius: 16px;
   overflow: hidden;
-  background: #FFFFFF;
+  background: var(--surface);
   color: var(--ink);
 }
 .project-dialog[open] { animation: dialog-in .22s ease; }
@@ -321,7 +334,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   min-height: 600px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: #FFFFFF;
+  background: var(--surface);
 }
 .resume-note { margin: 16px 0 0; color: var(--graphite); font-size: 0.95rem; }
 
@@ -335,7 +348,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 }
 
 /* company-logo cards: show the whole logo instead of cropping it */
-.card-media.logo { background: #FFFFFF; }
+.card-media.logo { background: var(--surface); }
 .card-media.logo img { object-fit: contain; padding: 14px; }
 
 /* ---------- experience timeline ---------- */
@@ -380,7 +393,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: var(--surface);
   border: 1px solid var(--line);
   display: flex;
   align-items: center;
@@ -394,7 +407,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 }
 
 .timeline-card {
-  background: #FFFFFF;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 18px 22px 20px;
@@ -435,7 +448,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 .timeline-desc {
   margin: 0;
   color: var(--graphite);
-  max-width: 92ch;
+  max-width: 62ch;
 }
 
 @media (max-width: 560px) {
@@ -447,4 +460,32 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   .timeline-card { transition: none; }
+}
+
+/* ---------- dark mode toggle ---------- */
+
+.theme-toggle {
+  margin-left: 24px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(245, 245, 247, 0.3);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--header-text);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color .2s ease, color .2s ease;
+}
+.theme-toggle:hover { color: var(--steel-light); border-color: var(--steel-light); }
+
+html[data-theme="dark"] .theme-toggle .icon-sun,
+html:not([data-theme="dark"]) .theme-toggle .icon-moon {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle { transition: none; }
 }
