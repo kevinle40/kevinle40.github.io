@@ -357,8 +357,8 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 .timeline-marker {
   position: relative;
   z-index: 1;
-  width: 100px;
-  height: 100px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: #FFFFFF;
   border: 1px solid var(--line);
@@ -415,7 +415,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 .timeline-desc {
   margin: 0;
   color: var(--graphite);
-  max-width: 62ch;
+  max-width: 72ch;
 }
 
 @media (max-width: 560px) {
