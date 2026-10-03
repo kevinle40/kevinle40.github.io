@@ -339,9 +339,9 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   content: "";
   position: absolute;
   top: 36px;
-  bottom: 36px;
-  left: 35px;
-  width: 1px;
+  bottom: 0;
+  left: 34px;
+  width: 3px;
   background: var(--line);
 }
 
@@ -415,11 +415,11 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 .timeline-desc {
   margin: 0;
   color: var(--graphite);
-  max-width: 72ch;
+  max-width: 62ch;
 }
 
 @media (max-width: 560px) {
-  .timeline::before { top: 27px; bottom: 27px; left: 27px; }
+  .timeline::before { top: 27px; bottom: 0; left: 25px; width: 3px; }
   .timeline-entry { grid-template-columns: 54px 1fr; column-gap: 16px; }
   .timeline-marker { width: 54px; height: 54px; }
   .timeline-card { padding: 14px 16px 16px; }
