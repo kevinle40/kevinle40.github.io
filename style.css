@@ -1,25 +1,25 @@
 :root {
-  --paper: #F4F4F4;
-  --ink: #2E2E2E;
-  --graphite: #6E6E73;
-  --steel: #4A90E2;
-  --line: #D2D2D7;
-  --banner: #EEF3F8;
-  --header-bg: #2E2E2E;
-  --header-text: #FFFFFF;
-  --steel-light: #6BA7E8;
-  --surface: #FFFFFF;
+  --paper: #C5C3C6;
+  --ink: #46494C;
+  --graphite: #72757A;
+  --steel: #1985A1;
+  --line: #B0AEB1;
+  --banner: #DCDCDD;
+  --header-bg: #4C5C68;
+  --header-text: #DCDCDD;
+  --steel-light: #3AA7C2;
+  --surface: #DCDCDD;
   --measure: 680px;
 }
 
 :root[data-theme="dark"] {
-  --paper: #1E1E1E;
-  --ink: #F4F4F4;
-  --graphite: #ABABAB;
-  --line: #444444;
-  --banner: #2E2E2E;
-  --surface: #2E2E2E;
-  --steel: #6BA7E8;
+  --paper: #242527;
+  --ink: #DCDCDD;
+  --graphite: #A9ACAF;
+  --line: #54575A;
+  --banner: #46494C;
+  --surface: #46494C;
+  --steel: #3AA7C2;
 }
 
 html { background: var(--paper); }
@@ -373,8 +373,8 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   position: absolute;
   top: 36px;
   bottom: 0;
-  left: 34px;
-  width: 3px;
+  left: 35px;
+  width: 2px;
   background: var(--line);
 }
 
