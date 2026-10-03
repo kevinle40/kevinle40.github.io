@@ -346,7 +346,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   border-bottom: 1px solid var(--line);
 }
 
-.experience .wrap { max-width: 1300px; }
+
 
 .timeline {
   position: relative;
@@ -435,7 +435,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 .timeline-desc {
   margin: 0;
   color: var(--graphite);
-  max-width: 62ch;
+  max-width: 92ch;
 }
 
 @media (max-width: 560px) {
