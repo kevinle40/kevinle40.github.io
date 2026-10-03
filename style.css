@@ -135,7 +135,25 @@ nav a:hover { color: var(--steel-light); }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+
+.about > .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.about-text { flex: 1 1 420px; }
+
 .about p { max-width: 62ch; color: var(--graphite); }
+
+@media (max-width: 700px) {
+  .about > .wrap {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 28px;
+  }
+}
 
 /* ---------- projects ---------- */
 
@@ -328,6 +346,8 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   border-bottom: 1px solid var(--line);
 }
 
+.experience .wrap { max-width: 1300px; }
+
 .timeline {
   position: relative;
   list-style: none;
@@ -340,8 +360,8 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   position: absolute;
   top: 36px;
   bottom: 0;
-  left: 35px;
-  width: 1px;
+  left: 34px;
+  width: 3px;
   background: var(--line);
 }
 
@@ -415,7 +435,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 .timeline-desc {
   margin: 0;
   color: var(--graphite);
-  max-width: 92ch;
+  max-width: 62ch;
 }
 
 @media (max-width: 560px) {
