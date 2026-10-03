@@ -340,8 +340,8 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   position: absolute;
   top: 36px;
   bottom: 0;
-  left: 34px;
-  width: 3px;
+  left: 35px;
+  width: 2px;
   background: var(--line);
 }
 
@@ -415,7 +415,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
 .timeline-desc {
   margin: 0;
   color: var(--graphite);
-  max-width: 62ch;
+  max-width: 100ch;
 }
 
 @media (max-width: 560px) {
